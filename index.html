@@ -56,15 +56,18 @@ jQuery(document).ready(function(){
     });
 
 
-	// keyboard support: add a class of open to the parent element to trigger style changes and show the dropdown
-	$('.item-with-ul > a').focus(function() {
-	    $(this).parent().addClass("open");
-	});
+	// // keyboard support: add a class of open to the .top-level parent to trigger style changes and show the dropdown
 
-	//keyboard support: when the last li a in the dropdown loses focus remove the class of open to close the dropdown
-	$('.item-with-ul > a + .sub-menu li:last-child a').blur(function() {
-	    $(this).parent().parent().parent().removeClass("open");
+	//.top-level should have a class of 'open' if an element inside it has focus
+	$('.top-level *').focus(function() {
+		// remove class of open from all top-level elements that are parents of the focused element
+	   	$(this).parent(".top-level").parent().find(".open").not($(this)).removeClass("open");
+		// add class of open to parent .top-level only
+	   	$(this).parent(".top-level").addClass("open");
 	});
+   
+
+
 
  });	
 </script>
