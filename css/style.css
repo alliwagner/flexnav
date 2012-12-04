@@ -148,7 +148,8 @@ p {font-size: 14px;margin-bottom: 16px; line-height: 18px;}
 		background-color: #333;	
 		width: 20%;		
 	}
-	.no-touch .item-with-ul:hover > ul { 
+	.no-touch .item-with-ul:hover > ul,
+	.no-touch .item-with-ul.open > ul { 
 		opacity: 1;
 		top: 3.1em;	
 		position: absolute;	
@@ -182,7 +183,8 @@ p {font-size: 14px;margin-bottom: 16px; line-height: 18px;}
 		z-index: 1;					
 	}	
 
-	.no-touch .item-with-ul:hover > ul { 
+	.no-touch .item-with-ul:hover > ul,
+	.no-touch .item-with-ul.open > ul { 
 		visibility: visible;
 		opacity: 1;
 		height: auto;

@@ -53,10 +53,22 @@ jQuery(document).ready(function(){
 			}
         }
 
-    });	
-	
+    });
+
+
+	// keyboard support: add a class of open to the parent element to trigger style changes and show the dropdown
+	$('.item-with-ul > a').focus(function() {
+	    $(this).parent().addClass("open");
+	});
+
+	//keyboard support: when the last li a in the dropdown loses focus remove the class of open to close the dropdown
+	$('.item-with-ul > a + .sub-menu li:last-child a').blur(function() {
+	    $(this).parent().parent().parent().removeClass("open");
+	});
+
  });	
 </script>
+
 </head>
   <body>		
 	<div class="container">		
